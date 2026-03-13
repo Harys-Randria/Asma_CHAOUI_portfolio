@@ -5,10 +5,10 @@ import { AnimationWrapper } from './AnimationWrapper';
 
 const experiences = [
   {
-    title: 'Senior DevOps Engineer',
+    title: 'Ingénieure DevOps Senior',
     company: 'Tech Innovations Inc.',
-    period: 'January 2022 - Present',
-    description: 'Leading DevOps initiatives and infrastructure transformation',
+    period: 'Janvier 2022 - Présent',
+    description: 'Pilotage des initiatives DevOps et transformation d\'infrastructure',
     responsibilities: [
       'Designed and implemented comprehensive CI/CD infrastructure using Jenkins and GitLab CI, reducing deployment time by 60%',
       'Architected Kubernetes clusters on AWS EKS with auto-scaling and disaster recovery capabilities',
@@ -132,12 +132,12 @@ export function Experience() {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id="experiences" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimationWrapper delay={0.1}>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Professional Experience</h2>
-            <p className="text-xl text-slate-600">7+ years of progressive DevOps and infrastructure expertise</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Expériences professionnelles</h2>
+            <p className="text-xl text-slate-600">7+ ans d'expertise progressive en DevOps et infrastructure</p>
           </div>
         </AnimationWrapper>
 

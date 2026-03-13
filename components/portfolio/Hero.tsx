@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { AnimationWrapper } from './AnimationWrapper';
@@ -8,13 +9,13 @@ import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
   const stats = [
-    { label: 'Years Experience', value: '7+' },
-    { label: 'Projects Delivered', value: '50+' },
-    { label: 'AWS Certifications', value: '5' },
+    { label: 'Années d\'expérience', value: '7+' },
+    { label: 'Projets réalisés', value: '50+' },
+    { label: 'Certifications AWS', value: '5' },
   ];
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center pt-20">
+    <section id="hero" className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center pt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -25,7 +26,7 @@ export function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <span className="text-sm font-semibold text-blue-600">Welcome to my portfolio</span>
+                <span className="text-sm font-semibold text-blue-600">Bienvenue sur mon portfolio</span>
                 <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mt-2 text-balance">
                   Asma CHAOUI
                 </h1>
@@ -37,10 +38,10 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <h2 className="text-2xl md:text-3xl font-semibold text-slate-700">
-                  AWS DevOps Engineer
+                  Ingénieure DevOps AWS
                 </h2>
                 <p className="text-lg text-slate-600 mt-2">
-                  Specializing in Cloud Infrastructure, Infrastructure as Code & DevOps
+                  Spécialisée en infrastructure cloud, Infrastructure as Code et DevOps
                 </p>
               </motion.div>
 
@@ -50,10 +51,10 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                With over 7 years of expertise in AWS cloud infrastructure, I help organizations 
-                design, implement, and optimize their cloud solutions. My passion lies in 
-                infrastructure automation, CI/CD pipelines, and creating scalable, secure systems 
-                that drive business value.
+                Avec plus de 7 ans d'expertise en infrastructure AWS, j'aide les organisations à concevoir, 
+                mettre en place et optimiser leurs solutions cloud. Ma passion réside dans l'automatisation 
+                d'infrastructure, les pipelines CI/CD et la création de systèmes évolutifs et sécurisés 
+                qui créent de la valeur métier.
               </motion.p>
 
               {/* Stats */}
@@ -85,12 +86,22 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                <Button className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white px-6 py-2 h-auto">
-                  View My Work <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50 px-6 py-2 h-auto">
-                  Contact Me
-                </Button>
+                <a
+                  href="#experiences"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  <Button className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white px-6 py-2 h-auto">
+                    Voir mon travail <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </a>
+                <Link href="/contact">
+                  <Button variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50 px-6 py-2 h-auto">
+                    Me contacter
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </AnimationWrapper>

@@ -5,18 +5,53 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: 'À propos', href: '#hero' },
+    { name: 'Compétences', href: '#competences' },
+    { name: 'Expériences', href: '#experiences' },
+    { name: 'Formation', href: '#formation' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+
+      // Scrollspy logic
+      const sections = ['hero', 'competences', 'experiences', 'formation', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <motion.nav
@@ -38,8 +73,35 @@ export function Navigation() {
             </span>
           </Link>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`text-sm font-medium transition-colors ${
+                  activeSection === link.href.substring(1)
+                    ? 'text-blue-600'
+                    : 'text-slate-600 hover:text-blue-600'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-slate-600 hover:text-blue-600"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
+          {/* Social Links - Desktop Only */}
+          <div className="hidden md:flex items-center gap-4">
             <a
               href="https://linkedin.com"
               target="_blank"
@@ -52,13 +114,12 @@ export function Navigation() {
               </svg>
             </a>
 
-            {/* Malt Platform */}
             <a
               href="https://malt.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
-              aria-label="Malt Profile"
+              aria-label="Malt"
             >
               <Image
                 src="/images/malt.png"
@@ -69,13 +130,12 @@ export function Navigation() {
               />
             </a>
 
-            {/* Collective Platform */}
             <a
               href="https://collective.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
-              aria-label="Collective Profile"
+              aria-label="Collective"
             >
               <Image
                 src="/images/collective.png"
@@ -86,11 +146,10 @@ export function Navigation() {
               />
             </a>
 
-            {/* Email */}
             <a
-              href="mailto:asma@example.com"
+              href="mailto:freelance.chaoui@gmail.com"
               className="hover:opacity-80 transition-opacity"
-              aria-label="Email Contact"
+              aria-label="Email"
             >
               <Image
                 src="/images/email.png"
@@ -101,12 +160,43 @@ export function Navigation() {
               />
             </a>
 
-            {/* CTA Button */}
-            <Button className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white">
-              Let's Talk
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white">
+                Me contacter
+              </Button>
+            </Link>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            className="md:hidden mt-4 space-y-3 pb-4"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`block px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === link.href.substring(1)
+                    ? 'bg-blue-100 text-blue-600 font-medium'
+                    : 'text-slate-600 hover:bg-slate-100'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <Link href="/contact" className="block">
+              <Button className="w-full bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white">
+                Me contacter
+              </Button>
+            </Link>
+          </motion.div>
+        )}
       </div>
     </motion.nav>
   );

@@ -7,21 +7,21 @@ import { Cloud, Zap, Lock } from 'lucide-react';
 const skillCategories = [
   {
     title: 'Cloud AWS & IaC',
-    description: 'Deep expertise in AWS services, CloudFormation, Terraform, and cloud architecture design.',
+    description: 'Expertise approfondie en services AWS, CloudFormation, Terraform et conception d\'architecture cloud.',
     icon: Cloud,
     skills: ['AWS EC2', 'S3', 'RDS', 'Lambda', 'CloudFormation', 'Terraform', 'VPC', 'IAM'],
   },
   {
-    title: 'Automation & CI/CD',
-    description: 'Building robust CI/CD pipelines and automation workflows for continuous delivery.',
+    title: 'Automatisation & CI/CD',
+    description: 'Création de pipelines CI/CD robustes et workflows d\'automatisation pour le déploiement continu.',
     icon: Zap,
     skills: ['Jenkins', 'GitLab CI', 'GitHub Actions', 'Docker', 'Kubernetes', 'Ansible', 'Python', 'Bash'],
   },
   {
-    title: 'Security, FinOps & Monitoring',
-    description: 'Implementing security best practices, cost optimization, and comprehensive monitoring solutions.',
+    title: 'Sécurité, FinOps & Monitoring',
+    description: 'Implémentation de meilleures pratiques de sécurité, optimisation des coûts et solutions de monitoring.',
     icon: Lock,
-    skills: ['AWS Security', 'CloudWatch', 'Datadog', 'ELK Stack', 'Cost Optimization', 'Compliance', 'SIEM', 'WAF'],
+    skills: ['AWS Security', 'CloudWatch', 'Datadog', 'ELK Stack', 'Optimisation des coûts', 'Conformité', 'SIEM', 'WAF'],
   },
 ];
 
@@ -47,12 +47,12 @@ export function Skills() {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id="competences" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimationWrapper delay={0.1}>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Core Competencies</h2>
-            <p className="text-xl text-slate-600">Areas where I excel and deliver results</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Compétences principales</h2>
+            <p className="text-xl text-slate-600">Domaines où j'excelle et apporte des résultats</p>
           </div>
         </AnimationWrapper>
 

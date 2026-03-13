@@ -108,13 +108,13 @@ export function TechnicalSkills() {
   };
 
   return (
-    <section className="py-20 bg-blue-50">
+    <section id="competences" className="py-20 bg-blue-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimationWrapper delay={0.1}>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Technical Skills</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Compétences techniques</h2>
             <p className="text-xl text-slate-600">
-              A comprehensive toolkit spanning cloud platforms, DevOps tools, and programming languages
+              Boîte à outils complète couvrant les plateformes cloud, les outils DevOps et les langages de programmation
             </p>
           </div>
         </AnimationWrapper>

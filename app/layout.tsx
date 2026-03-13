@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Asma CHAOUI - AWS DevOps Engineer',
-  description: 'Professional portfolio of Asma CHAOUI, an experienced AWS DevOps Engineer specializing in cloud infrastructure, infrastructure as code, automation, CI/CD, and security.',
+  title: 'Asma CHAOUI - Ingénieure DevOps AWS',
+  description: 'Portfolio professionnel d\'Asma CHAOUI, ingénieure DevOps AWS expérimentée spécialisée en infrastructure cloud, Infrastructure as Code, automatisation, CI/CD et sécurité.',
   generator: 'v0.app',
   viewport: {
     width: 'device-width',
@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className="font-sans antialiased">
         {children}
         <Analytics />

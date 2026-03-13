@@ -53,10 +53,10 @@ const education = [
 ];
 
 const languages = [
-  { name: 'English', level: 'Fluent', proficiency: 95 },
-  { name: 'French', level: 'Native', proficiency: 100 },
-  { name: 'Spanish', level: 'Intermediate', proficiency: 65 },
-  { name: 'Arabic', level: 'Native', proficiency: 100 },
+  { name: 'Anglais', level: 'Courant', proficiency: 95 },
+  { name: 'Français', level: 'Natif', proficiency: 100 },
+  { name: 'Espagnol', level: 'Intermédiaire', proficiency: 65 },
+  { name: 'Arabe', level: 'Natif', proficiency: 100 },
 ];
 
 export function Education() {
@@ -81,12 +81,12 @@ export function Education() {
   };
 
   return (
-    <section className="py-20 bg-blue-50">
+    <section id="formation" className="py-20 bg-blue-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimationWrapper delay={0.1}>
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Education & Certifications</h2>
-            <p className="text-xl text-slate-600">Professional development and continuous learning</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Formation & Certifications</h2>
+            <p className="text-xl text-slate-600">Développement professionnel et apprentissage continu</p>
           </div>
         </AnimationWrapper>
 
@@ -94,7 +94,7 @@ export function Education() {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
             <Award className="w-6 h-6 text-blue-600" />
-            AWS Certifications
+            Certifications AWS
           </h3>
           <motion.div
             className="grid md:grid-cols-2 gap-6"
