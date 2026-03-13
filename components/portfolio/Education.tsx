@@ -6,49 +6,29 @@ import { Award, BookOpen, Globe } from 'lucide-react';
 
 const certifications = [
   {
-    title: 'AWS Certified Solutions Architect - Professional',
+    title: 'AWS Certified SysOps Administrator - Associate',
     issuer: 'Amazon Web Services',
-    date: 'March 2023',
-    credentialId: 'SAA-PRO-2023-001',
-  },
-  {
-    title: 'AWS Certified DevOps Engineer - Professional',
-    issuer: 'Amazon Web Services',
-    date: 'September 2022',
-    credentialId: 'DOP-PRO-2022-001',
+    date: 'Avril 2022',
   },
   {
     title: 'AWS Certified Solutions Architect - Associate',
     issuer: 'Amazon Web Services',
-    date: 'June 2021',
-    credentialId: 'SAA-ASS-2021-001',
-  },
-  {
-    title: 'AWS Certified Developer - Associate',
-    issuer: 'Amazon Web Services',
-    date: 'January 2021',
-    credentialId: 'DEV-ASS-2021-001',
-  },
-  {
-    title: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services',
-    date: 'August 2020',
-    credentialId: 'CP-2020-001',
+    date: 'Février 2021',
   },
 ];
 
 const education = [
   {
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University of Technology',
-    year: '2015',
-    details: 'Graduated with honors, GPA: 3.8/4.0',
+    degree: 'Formation Pratique DevOps',
+    institution: 'Formation',
+    year: '05/2020',
+    details: null,
   },
   {
-    degree: 'Professional Diploma in Linux Administration',
-    institution: 'International IT Academy',
-    year: '2016',
-    details: 'Specialized in server administration and networking',
+    degree: 'Diplôme d\'ingénieur - Spécialité Système et Réseaux',
+    institution: 'Diplômes',
+    year: '2015',
+    details: null,
   },
 ];
 
@@ -121,10 +101,7 @@ export function Education() {
                 </div>
                 <div className="bg-blue-50 rounded p-3 text-sm">
                   <p className="text-slate-700">
-                    <span className="font-semibold">Issued:</span> {cert.date}
-                  </p>
-                  <p className="text-slate-600 text-xs mt-1">
-                    ID: {cert.credentialId}
+                    <span className="font-semibold">Émis:</span> {cert.date}
                   </p>
                 </div>
               </motion.div>
@@ -200,7 +177,7 @@ export function Education() {
                     viewport={{ once: true }}
                   />
                 </div>
-                <p className="text-xs text-slate-500 mt-2">{lang.proficiency}% Proficiency</p>
+                <p className="text-xs text-slate-500 mt-2">{lang.proficiency}% Maîtrise</p>
               </motion.div>
             ))}
           </motion.div>
