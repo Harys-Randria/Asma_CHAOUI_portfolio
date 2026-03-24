@@ -21,7 +21,7 @@ const skillCategories = [
     title: 'Sécurité, FinOps & Monitoring',
     description: 'Implémentation de meilleures pratiques de sécurité, optimisation des coûts et solutions de monitoring.',
     icon: Lock,
-    skills: ['AWS Security', 'CloudWatch', 'Datadog', 'ELK Stack', 'Optimisation des coûts', 'Conformité', 'SIEM', 'WAF'],
+    skills: ['AWS Config', 'CloudWatch', 'Grafana', 'AWS Security Heb', 'Optimisation des coûts', 'Conformité', 'Benchmark CIS', 'WAF'],
   },
 ];
 

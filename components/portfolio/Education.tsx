@@ -35,7 +35,6 @@ const education = [
 const languages = [
   { name: 'Anglais', level: 'Courant', proficiency: 95 },
   { name: 'Français', level: 'Natif', proficiency: 100 },
-  { name: 'Espagnol', level: 'Intermédiaire', proficiency: 65 },
   { name: 'Arabe', level: 'Natif', proficiency: 100 },
 ];
 
